@@ -12,8 +12,7 @@ ngApp.controller("myCtrl", [
     s.buildScript = () => {
       s.script = `
       document.body.insertAdjacentHTML("beforeend",\`
-        <script src="${document.location.origin}/assets/youtubeScript.js"></script>
-        <span class="hljs-name">script</span>
+        <script src="${window.location.href}/assets/youtubeScript.js"></script>
         <script>
           let youtubeScriptLanguageObj =new YoutubeScriptLanguages();
           youtubeScriptLanguageObj.skipNotSupportedLanguages=${!s.config.addAllSubtitleLanguagesSupportedByYoutubeAndTubebuddyOnly};
