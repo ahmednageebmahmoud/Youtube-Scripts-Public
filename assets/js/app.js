@@ -25,11 +25,7 @@ ngApp.controller("myCtrl", [
 
 `;
 
-setTimeout(() => {
-  
-  
-  hljs?.initHighlightingOnLoad();
-}, 0);
+ 
     };
 
     s.buildScript();
