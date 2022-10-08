@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Random Users - Ahmed Nageeb Mahmoud</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/assets/highlight/styles/default.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/highlight/styles/base16/framer.min.css"
+    />
+  </head>
+  <body ng-app="ngApp" ng-controller="myCtrl">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Youtube Script</h1>
+        <p>
+          <span class="badge badge-info">1</span>
+          Add All Subtitle Languages. <br />
+          <span class="badge badge-info">2</span>
+          Translate Title And Description Automatically By Tubebuddy Extension.
+          <br />
+          <span class="badge badge-info">3</span>
+          Automatically Translate Subtitle Files.
+        </p>
+        <div class="row">
+          <div class="col-6">
+            <a class="btn btn-outline-success w-100" href="https://paypal.me/AhmedNageebMahmoud?country.x=EG&locale.x=ar_EG">
+              Say Thanks To Me
+              <img class="ml-1" src="/assets/images/hart.png" width="25">
+            </a>
+          </div>
+          <div class="col-3">
+            <buttaon class="btn btn-outline-danger w-100">Tutorial Video
+              <img class="ml-1" src="/assets/images/video.png" width="25">
+
+            </buttaon>
+            </div>
+          <div class="col-3">
+            <a class="btn btn-outline-danger w-100" href="https://www.youtube.com/c/anmsezer">
+              Youtube Channel 
+              <img class="ml-1" src="/assets/images/youtube.png" width="25">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!--Script Form -->
+      <div class="row mt-3 pt-3 pb-3">
+        <div class="col-12">
+          <h5>Script Settings:</h5>
+        </div>
+        <div class="col-12">
+          <form class="row" novalidate name="form">
+            <div class="form-group col-12">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="check1"
+                  ng-model="config.addAllSubtitleLanguagesSupportedByYoutubeAndTubebuddyOnly"
+                  ng-change="buildScript()"
+                />
+                <label class="form-check-label" for="check1">
+                  Add All Subtitle Languages Supported By Youtube And Tubebuddy
+                  Only (Will Add
+                  <span class="badge badge-info">
+                    {{config.addAllSubtitleLanguagesSupportedByYoutubeAndTubebuddyOnly?190-38:190}}</span
+                  >
+                  Language)
+                </label>
+              </div>
+            </div>
+            <div class="form-group col-12">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="check2"
+                  ng-model="config.translateTitleAndDescriptionAutomaticallyByTubebuddyExtension"
+                  ng-change="buildScript()"
+                />
+                <label class="form-check-label" for="check2">
+                  Translate Title And Description Automatically By Tubebuddy
+                  Extension
+                </label>
+              </div>
+            </div>
+            <div class="form-group col-12">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="check3"
+                  ng-model="config.automaticallyTranslateSubtitleFiles"
+                  ng-change="buildScript()"
+                />
+                <label class="form-check-label" for="check3">
+                  Automatically Translate Subtitle Files
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group col-12 mt-5">
+              <h5>How To Use?</h5>
+              <span class="badge badge-secondary">1</span> Copy The Following
+              Code. <br />
+              <span class="badge badge-secondary">2</span> Open Your Video In
+              Youtube Studio And Go To Subtitles Tap Like
+              "https://studio.youtube.com/video/qYz3igyJyP4/translations".
+              <br />
+              <span class="badge badge-secondary">3</span> Press
+              <span class="badge badge-info">F12</span> And Go To Console
+              Tap.<br />
+              <span class="badge badge-secondary">4</span> Past The Code To
+              Start Work.<br />
+
+              <pre><code class="language-javascript hljs">{{script}}</code></pre>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="fixed-bottom">
+      <div class="text-center">
+        <p>This Page Created By Ahmed Nageeb Mahmoud</p>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script src="/assets/highlight/highlight.min.js"></script>
+
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
