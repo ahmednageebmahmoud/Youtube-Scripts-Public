@@ -12,16 +12,11 @@ ngApp.controller("myCtrl", [
     s.buildScript = () => {
       s.script = `
       document.body.insertAdjacentHTML("beforeend",\`
-        <script src="${window.location.href}assets/js/youtubeScript.js"></script>
-        <script>
-          let youtubeScriptLanguageObj =new YoutubeScriptLanguages();
-          youtubeScriptLanguageObj.skipNotSupportedLanguages=${!s.config.addAllSubtitleLanguagesSupportedByYoutubeAndTubebuddyOnly};
-          youtubeScriptLanguageObj.addLanguages();
-          let youtubeScriptTranslationObj=new YoutubeScriptTranslation();
-          youtubeScriptTranslationObj.isAllowAddSubtitle=${s.config.translateTitleAndDescriptionAutomaticallyByTubebuddyExtension};
-          youtubeScriptTranslationObj.isAllowTranslateTitle=${s.config.automaticallyTranslateSubtitleFiles};
-          youtubeScriptTranslationObj.translateRows();
-        </script>\`)
+        <script id="ahmedsezeryoutubescript" src="${window.location.href}assets/js/youtubeScript.js"
+        skipNotSupportedLanguages="${!s.config.addAllSubtitleLanguagesSupportedByYoutubeAndTubebuddyOnly}"
+        isAllowAddSubtitle="${s.config.translateTitleAndDescriptionAutomaticallyByTubebuddyExtension}"
+        isAllowTranslateTitle="${s.config.automaticallyTranslateSubtitleFiles}"
+        ></script>\`)
 
 `;
 
