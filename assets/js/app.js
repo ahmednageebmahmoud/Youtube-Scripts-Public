@@ -15,8 +15,8 @@ ngApp.controller("myCtrl", [
         script.src="${window.location.href}assets/js/youtubeScript.js";
         script.id="ahmedsezeryoutubescript";
         script.setAttribute("skipNotSupportedLanguages",${!s.config.addAllSubtitleLanguagesSupportedByYoutubeAndTubebuddyOnly})
-        script.setAttribute("isAllowTranslateTitle",${s.config.automaticallyTranslateSubtitleFiles})
-        script.setAttribute("isAllowAddSubtitle",${s.config.translateTitleAndDescriptionAutomaticallyByTubebuddyExtension})
+        script.setAttribute("isAllowTranslateTitle",${s.config.translateTitleAndDescriptionAutomaticallyByTubebuddyExtension})
+        script.setAttribute("isAllowAddSubtitle",${s.config.automaticallyTranslateSubtitleFiles})
         document.body.appendChild(script);
        \`)
 `;
