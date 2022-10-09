@@ -18,7 +18,6 @@ ngApp.controller("myCtrl", [
         script.setAttribute("isAllowTranslateTitle",${s.config.translateTitleAndDescriptionAutomaticallyByTubebuddyExtension})
         script.setAttribute("isAllowAddSubtitle",${s.config.automaticallyTranslateSubtitleFiles})
         document.body.appendChild(script);
-       \`)
 `;
 
  
