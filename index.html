@@ -17,9 +17,12 @@
     />
   </head>
   <body ng-app="ngApp" ng-controller="myCtrl">
+    
     <div class="jumbotron">
       <div class="container">
+        <div id="google_translate_element" class="float-right"></div>
         <h1>Youtube Script</h1>
+
         <p>
           <span class="badge badge-info">1</span>
           Add All Subtitle Languages. <br />
@@ -141,5 +144,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
 
     <script src="./assets/js/app.js"></script>
+
+    
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  }
+  </script>
+  
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
   </body>
 </html>
