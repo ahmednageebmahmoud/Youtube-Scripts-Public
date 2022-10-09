@@ -11,13 +11,14 @@ ngApp.controller("myCtrl", [
 
     s.buildScript = () => {
       s.script = `
-      document.body.insertAdjacentHTML("beforeend",\`
-        <script id="ahmedsezeryoutubescript" src="${window.location.href}assets/js/youtubeScript.js"
-        skipNotSupportedLanguages="${!s.config.addAllSubtitleLanguagesSupportedByYoutubeAndTubebuddyOnly}"
-        isAllowAddSubtitle="${s.config.translateTitleAndDescriptionAutomaticallyByTubebuddyExtension}"
-        isAllowTranslateTitle="${s.config.automaticallyTranslateSubtitleFiles}"
-        ></script>\`)
-
+        var script = document.createElement('script');
+        script.src="${window.location.href}assets/js/youtubeScript.js";
+        script.id="ahmedsezeryoutubescript";
+        script.setAttribute("skipNotSupportedLanguages",${!s.config.addAllSubtitleLanguagesSupportedByYoutubeAndTubebuddyOnly})
+        script.setAttribute("isAllowTranslateTitle",${s.config.automaticallyTranslateSubtitleFiles})
+        script.setAttribute("isAllowAddSubtitle",${s.config.translateTitleAndDescriptionAutomaticallyByTubebuddyExtension})
+        document.body.appendChild(script);
+       \`)
 `;
 
  
@@ -26,3 +27,4 @@ ngApp.controller("myCtrl", [
     s.buildScript();
   },
 ]);
+
