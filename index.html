@@ -17,7 +17,6 @@
     />
   </head>
   <body ng-app="ngApp" ng-controller="myCtrl">
-    
     <div class="jumbotron">
       <div class="container">
         <div id="google_translate_element" class="float-right"></div>
@@ -27,28 +26,34 @@
           <span class="badge badge-info">1</span>
           Add All Subtitle Languages. <br />
           <span class="badge badge-info">2</span>
-          Translate Title And Description Automatically By Tubebuddy Extension.
+          Translate Title And Description Automatically Google Translate.
           <br />
           <span class="badge badge-info">3</span>
-          Automatically Translate Subtitle Files.
+          Translate Subtitles By Youtube Automatically Translate.
         </p>
         <div class="row">
           <div class="col-6">
-            <a class="btn btn-outline-success w-100" href="https://paypal.me/AhmedNageebMahmoud?country.x=EG&locale.x=ar_EG">
+            <a
+              class="btn btn-outline-success w-100"
+              href="https://paypal.me/AhmedNageebMahmoud?country.x=EG&locale.x=ar_EG"
+            >
               Say Thanks To Me
-              <img class="ml-1" src="./assets/images/hart.png" width="25">
+              <img class="ml-1" src="./assets/images/hart.png" width="25" />
             </a>
           </div>
           <div class="col-3">
-            <buttaon class="btn btn-outline-danger w-100">Tutorial Video
-              <img class="ml-1" src="./assets/images/video.png" width="25">
-
+            <buttaon class="btn btn-outline-danger w-100"
+              >Tutorial Video
+              <img class="ml-1" src="./assets/images/video.png" width="25" />
             </buttaon>
-            </div>
+          </div>
           <div class="col-3">
-            <a class="btn btn-outline-danger w-100" href="https://www.youtube.com/c/anmsezer">
-              Youtube Channel 
-              <img class="ml-1" src="./assets/images/youtube.png" width="25">
+            <a
+              class="btn btn-outline-danger w-100"
+              href="https://www.youtube.com/c/anmsezer"
+            >
+              Youtube Channel
+              <img class="ml-1" src="./assets/images/youtube.png" width="25" />
             </a>
           </div>
         </div>
@@ -69,16 +74,15 @@
                   class="form-check-input"
                   type="checkbox"
                   id="check1"
-                  ng-model="config.addAllSubtitleLanguagesSupportedByYoutubeAndTubebuddyOnly"
+                  ng-model="config.isAllowAddLanguages"
                   ng-change="buildScript()"
                 />
                 <label class="form-check-label" for="check1">
-                  Add All Subtitle Languages Supported By Youtube And Tubebuddy
-                  Only (Will Add
-                  <span class="badge badge-info">
-                    {{config.addAllSubtitleLanguagesSupportedByYoutubeAndTubebuddyOnly?190-38:190}}</span
+                  Allow Add All
+                  <span class="badge badge-info"
+                    >{{supportedLanguagesSize}}</span
                   >
-                  Language)
+                  Supported Languages
                 </label>
               </div>
             </div>
@@ -88,71 +92,95 @@
                   class="form-check-input"
                   type="checkbox"
                   id="check2"
-                  ng-model="config.translateTitleAndDescriptionAutomaticallyByTubebuddyExtension"
+                  ng-model="config.isAllowTranslateTitle"
                   ng-change="buildScript()"
                 />
                 <label class="form-check-label" for="check2">
-                  Translate Title And Description Automatically By Tubebuddy
-                  Extension
+                  Translate Title And Description
                 </label>
               </div>
             </div>
+
             <div class="form-group col-12">
               <div class="form-check">
                 <input
                   class="form-check-input"
                   type="checkbox"
                   id="check3"
-                  ng-model="config.automaticallyTranslateSubtitleFiles"
+                  ng-model="config.isAllowAddSubtitle"
                   ng-change="buildScript()"
                 />
                 <label class="form-check-label" for="check3">
-                  Automatically Translate Subtitle Files
+                  Allow Add Subtitles
                 </label>
               </div>
             </div>
+            
 
-            <div class="form-group col-12 mt-5">
+            <div class="form-group col-12 mt-3">
               <h5>How To Use?</h5>
-              <span class="badge badge-secondary">1</span> Copy The Following
-              Code. <br />
-              <span class="badge badge-secondary">2</span> Open Your Video In
-              Youtube Studio And Go To Subtitles Tap Like
-              "https://studio.youtube.com/video/qYz3igyJyP4/translations".
-              <br />
-              <span class="badge badge-secondary">3</span> Press
-              <span class="badge badge-info">F12</span> And Go To Console
-              Tap.<br />
-              <span class="badge badge-secondary">4</span> Past The Code To
-              Start Work.<br />
-
+              <div class="form-group">
+                <span class="badge badge-secondary">1</span> Copy The Following
+                Code. <br />
+                <span class="badge badge-secondary">2</span> Open Your Video In
+                Youtube Studio And Go To Subtitles Tap Like
+                "https://studio.youtube.com/video/qYz3igyJyP4/translations".
+                <br />
+                <span class="badge badge-secondary">3</span> Press
+                <span class="badge badge-info">F12</span> And Go To Console
+                Tap.<br />
+                <span class="badge badge-secondary">4</span> Past The Code To
+                Start Work.<br />
+              </div>
               <pre><code class="language-javascript hljs">{{script}}</code></pre>
+            </div>
+
+            <div class="form-group col-12 mt-3">
+              <h5>Supported Languages?</h5>
+              <div class="row">
+                <div class="col-12 form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search..."
+                    ng-model="slSearch"
+                  />
+                </div>
+                <div
+                  class="col-3 mb-3"
+                  ng-repeat="lang in supportedLanguages|filter:slSearch"
+                >
+                  <span class="badge badge-pill badge-dark w-100 p-3"
+                    >{{lang.name}}</span
+                  >
+                </div>
+              </div>
             </div>
           </form>
         </div>
       </div>
     </div>
-    <footer class="fixed-bottom">
-      <div class="text-center">
-        <p>This Page Created By Ahmed Nageeb Mahmoud</p>
-      </div>
-    </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
 
+    <script src="./assets/js/1-supported.languages.js"></script>
     <script src="./assets/js/app.js"></script>
 
-    
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-  }
-  </script>
-  
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
   </body>
 </html>
